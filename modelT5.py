@@ -67,13 +67,13 @@ class T5Model(pl.LightningModule):
         return self.trainer.global_rank <= 0
 
     def _step(self, batch):
-        lm_labels = batch["tid"]
+        lm_labels = batch["target_ids"]
         lm_labels[lm_labels[:, :] == self.tokenizer.pad_token_id] = -100
         outputs = self(
-            input_ids=batch["sid"], 
-            attention_mask=batch["smask"],
+            input_ids=batch["source_ids"], 
+            attention_mask=batch["source_mask"],
             lm_labels=lm_labels, 
-            decoder_attention_mask=batch['tmask']
+            decoder_attention_mask=batch['target_mask']
         )
         return outputs[0] #loss
 
