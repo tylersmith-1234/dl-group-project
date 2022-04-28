@@ -1,0 +1,18 @@
+{
+  "config": {
+    "activation_function": null,
+    "bias": false,
+    "head_type": "seq2seq_lm",
+    "label2id": null,
+    "layer_norm": false,
+    "layers": 1,
+    "shift_labels": false,
+    "vocab_size": 32128
+  },
+  "hidden_size": 512,
+  "model_class": "T5AdapterModel",
+  "model_name": "t5-small",
+  "model_type": "t5",
+  "name": "paraphrase",
+  "version": "3.0.0"
+}
