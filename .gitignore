@@ -136,3 +136,7 @@ dmypy.json
 .pyre/
 
 t5savedv4/
+.DS_Store
+__pycache__
+dataprovider/__pycache__
+
