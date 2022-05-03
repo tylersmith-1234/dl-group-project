@@ -36,4 +36,6 @@ class DatasetProvider(Dataset):
         tid = self.targets[index]["input_ids"].squeeze()
         smask = self.inputs[index]["attention_mask"].squeeze()
         tmask = self.targets[index]["attention_mask"].squeeze()
-        return {"source_ids": sid, "source_mask": smask, "target_ids": tid, "target_mask": tmask}        
+        # return {"source_ids": sid, "source_mask": smask, "target_ids": tid, "target_mask": tmask} 
+        # return {"input_ids": sid, "attention_mask": smask, "decoder_input_ids": tid, "decoder_attention_mask": tmask}  
+        return {"input_ids": sid, "attention_mask": smask, "decoder_input_ids": tid, "decoder_attention_mask": tmask, "labels": tid}       
